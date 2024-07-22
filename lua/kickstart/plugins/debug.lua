@@ -27,6 +27,8 @@ return {
   keys = function(_, keys)
     local dap = require 'dap'
     local dapui = require 'dapui'
+    local dapgo = require 'dap-go'
+
     return {
       -- Basic debugging keymaps, feel free to change to your liking!
       { '<F5>', dap.continue, desc = 'Debug: Start/Continue' },
@@ -41,6 +43,8 @@ return {
         end,
         desc = 'Debug: Set Breakpoint',
       },
+      -- { '<leader>dgt', dapgo.debug_test(), desc = 'Debug go test' },
+      -- { '<leader>dgl', dapgo.debug_last_test(), desc = 'Debug last go test' },
       -- Toggle to see last session result. Without this, you can't see session output in case of unhandled exception.
       { '<F7>', dapui.toggle, desc = 'Debug: See last session result.' },
       unpack(keys),
@@ -73,20 +77,20 @@ return {
       -- Set icons to characters that are more likely to work in every terminal.
       --    Feel free to remove or use ones that you like more! :)
       --    Don't feel like these are good choices.
-      icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
-      controls = {
-        icons = {
-          pause = '⏸',
-          play = '▶',
-          step_into = '⏎',
-          step_over = '⏭',
-          step_out = '⏮',
-          step_back = 'b',
-          run_last = '▶▶',
-          terminate = '⏹',
-          disconnect = '⏏',
-        },
-      },
+      -- icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
+      -- controls = {
+      --   icons = {
+      --     pause = '⏸',
+      --     play = '▶',
+      --     step_into = '⏎',
+      --     step_over = '⏭',
+      --     step_out = '⏮',
+      --     step_back = 'b',
+      --     run_last = '▶▶',
+      --     terminate = '⏹',
+      --     disconnect = '⏏',
+      --   },
+      -- },
     }
 
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
