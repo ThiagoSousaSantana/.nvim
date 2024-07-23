@@ -574,6 +574,7 @@ require('lazy').setup({
             },
           },
         },
+        -- helm_ls = {}
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -824,6 +825,8 @@ require('lazy').setup({
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
+
+      require('mini.starter').setup()
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
